@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passport Status Checker</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" rel="stylesheet">
+
+    />
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h1 class="text-center">View Passport Status</h1>
+      <p class="text-center">
+        Enter your 12 digit passport application reference number to check the
+        status.
+      </p>
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <form id="passportForm">
+            <div class="form-group">
+              <label for="referenceNumber">Reference Number</label>
+              <input
+                type="text"
+                class="form-control"
+                id="referenceNumber"
+                placeholder="Enter reference number"
+                pattern="\d{12}"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              Check Status
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="statusCard" class="container mt-4" style="display: none">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Passport Status</h5>
+          <p class="card-text">
+            Reference Number: <span id="statusReferenceNumber"></span>
+          </p>
+          <p class="card-text">Status: <span id="statusText"></span></p>
+          <p class="card-text">
+            Estimated Delivery Date: <span id="estimatedDeliveryDate"></span>
+          </p>
+          <p class="card-text">Type: <span id="cardtype"></span></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      document
+        .getElementById("passportForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          var referenceNumber =
+            document.getElementById("referenceNumber").value;
+          var statusText = "Verification Completed";
+          var estimatedDeliveryDate = "Delivered";
+          var cardtype = "International";
+          document.getElementById("statusReferenceNumber").textContent =
+            referenceNumber;
+          document.getElementById("statusText").textContent = statusText;
+          document.getElementById("estimatedDeliveryDate").textContent =
+            estimatedDeliveryDate;
+          document.getElementById("cardtype").textContent = cardtype;
+
+          document.getElementById("statusCard").style.display = "block";
+        });
+    </script>
+  </body>
+</html>

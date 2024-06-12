@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passport Seva</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+     href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" rel="stylesheet"
+
+    />
+  </head>
+  <body class="bg-light d-flex flex-column align-items-center vh-100">
+    <div class="container mt-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+          <div class="card">
+            <div class="card-body">
+              <h1 class="card-title text-center">Passport Application Form</h1>
+              <p class="card-text text-center">
+                All the fields are mandatory, please fill in all the details
+                carefully
+              </p>
+              <form id="passportForm">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    placeholder="Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="fatherName"
+                    name="fatherName"
+                    placeholder="Father Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="motherName"
+                    name="motherName"
+                    placeholder="Mother Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="surname"
+                    name="surname"
+                    placeholder="Surname"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    name="phone"
+                    placeholder="Phone Number"
+                    pattern="[0-9]{10}"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="address"
+                    name="address"
+                    placeholder="Address"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="city"
+                    name="city"
+                    placeholder="City"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="state"
+                    name="state"
+                    placeholder="State"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="zipcode"
+                    name="zipcode"
+                    placeholder="Zip Code"
+                    pattern="[0-9]{5}"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nativePlace"
+                    name="nativePlace"
+                    placeholder="Native Place"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="permanentAddress"
+                    name="permanentAddress"
+                    placeholder="Permanent Address"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="permanentCity"
+                    name="permanentCity"
+                    placeholder="Permanent City"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="permanentState"
+                    name="permanentState"
+                    placeholder="Permanent State"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="permanentZipcode"
+                    name="permanentZipcode"
+                    placeholder="Permanent Zip Code"
+                    pattern="[0-9]{6}"
+                    required
+                  />
+                </div>
+                <!-- Date of Birth -->
+                <div class="form-group">
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="dateOfBirth"
+                    name="dateOfBirth"
+                    required
+                  />
+                </div>
+                <!-- Passport Details -->
+                <div class="form-group">
+                  <select
+                    class="form-control"
+                    id="country"
+                    name="country"
+                    required
+                  >
+                    <option value="">Select Country</option>
+                    <option value="india">India</option>
+                    <option value="usa">USA</option>
+                    <option value="australia">Australia</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <select
+                    class="form-control"
+                    id="passportType"
+                    name="passportType"
+                    required
+                  >
+                    <option value="">Select Passport Type</option>
+                    <option value="india">India</option>
+                    <option value="usa">USA</option>
+                    <option value="australia">Australia</option>
+                  </select>
+                </div>
+                <!-- Guardian Details -->
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="guardianName"
+                    name="guardianName"
+                    placeholder="Guardian Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="guardianAddress"
+                    name="guardianAddress"
+                    placeholder="Guardian Address"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="guardianCity"
+                    name="guardianCity"
+                    placeholder="Guardian City"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="guardianState"
+                    name="guardianState"
+                    placeholder="Guardian State"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="guardianZipcode"
+                    name="guardianZipcode"
+                    placeholder="Guardian Zip Code"
+                    pattern="[0-9]{5}"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="guardianPhone"
+                    name="guardianPhone"
+                    placeholder="Guardian Phone Number"
+                    pattern="[0-9]{10}"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="guardianEmail"
+                    name="guardianEmail"
+                    placeholder="Guardian Email"
+                    required
+                  />
+                </div>
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary btn-block">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("passportForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          if (this.checkValidity()) {
+            window.location.href = "Payment.html";
+          } else {
+            alert("Please fill in all the required fields correctly.");
+          }
+        });
+
+        function validateForm() {
+          var name = document.getElementById("name").value;
+          if (name.trim() === "") {
+              return false;
+          }
+          return true;
+      }
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

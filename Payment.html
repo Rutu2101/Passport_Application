@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body class="bg-light d-flex flex-column align-items-center vh-100">
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title text-center">Payment</h1>
+                        <p class="card-text text-center">Please select your payment method.</p>
+                        
+                        <form id="paymentMethodForm">
+                            <div class="form-group">
+                                <label for="paymentMethod">Payment Method</label>
+                                <select class="form-control" id="paymentMethod" name="paymentMethod" required>
+                                    <option value="">Select Payment Method</option>
+                                    <option value="card">Card Payment</option>
+                                    <option value="upi">UPI Payment</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Proceed</button>
+                        </form>
+                        <!-- Payment form fields -->
+                        <div id="paymentFormFields" style="display: none;">
+                            <hr>
+                            <h5 class="text-center">Payment Details</h5>
+                            <div id="cardPaymentFields" style="display: none;">
+                                <!-- Card payment fields -->
+                                <div class="form-group">
+                                    <label for="cardNumber">Card Number</label>
+                                    <input type="text" class="form-control" id="cardNumber" name="cardNumber" placeholder="Enter Card Number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="expiryDate">Expiry Date</label>
+                                    <input type="text" class="form-control" id="expiryDate" name="expiryDate" placeholder="MM/YYYY">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" class="form-control" id="cvv" name="cvv" placeholder="Enter CVV">
+                                </div>
+                                <div class="form-group">
+                                    <label for="amount">Amount</label>
+                                    <input type="text" class="form-control" id="amount" name="amount" value="1499" readonly>
+                                </div>
+                            </div>
+                            <div id="upiPaymentFields" style="display: none;">
+                                <!-- UPI payment fields -->
+                                <div class="form-group">
+                                    <label for="upiId">UPI ID</label>
+                                    <input type="text" class="form-control" id="upiId" name="upiId" placeholder="Enter UPI ID" required >
+                                </div>
+                                <div class="form-group">
+                                    <label for="amount">Amount</label>
+                                    <input type="text" class="form-control" id="amount" name="amount" value="1499" readonly>
+                                </div>
+                            </div>
+                            <button id="submitPayment" class="btn btn-primary btn-block">Submit Payment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById("paymentMethodForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var paymentMethod = document.getElementById("paymentMethod").value;
+            if (paymentMethod === "card") {
+                document.getElementById("cardPaymentFields").style.display = "block";
+                document.getElementById("upiPaymentFields").style.display = "none";
+            } else if (paymentMethod === "upi") {
+                document.getElementById("cardPaymentFields").style.display = "none";
+                document.getElementById("upiPaymentFields").style.display = "block";
+            }
+            document.getElementById("paymentFormFields").style.display = "block";
+        });
+        document.getElementById("submitPayment").addEventListener("click", function (event) {
+            event.preventDefault();
+            // Add payment submission logic here
+            alert("Payment submitted successfully!");
+        });
+    </script>
+</body>
+</html>
